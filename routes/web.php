@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthProvider;
+use App\Http\Controllers\Auth\AuthSocialiteProvider;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,8 +8,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('auth/{provider}/redirect',[AuthProvider::class,'redirect'])->name('redirect');
-Route::get('auth/{provider}/callback',[AuthProvider::class,'callback'])->name('callback');
+Route::get('auth/{provider}/redirect',[AuthSocialiteProvider::class,'redirect'])->name('redirect');
+Route::get('auth/{provider}/callback',[AuthSocialiteProvider::class,'callback'])->name('callback');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
