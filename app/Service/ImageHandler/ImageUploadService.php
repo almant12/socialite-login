@@ -21,7 +21,6 @@ class ImageUploadService{
             if ($imageContent === false) {
                 throw new \Exception('Unable to fetch image content from URL.');
             }
-
             // Save the image to the storage disk
             Storage::disk('public')->put($path . '/' . $filename, $imageContent);
 
